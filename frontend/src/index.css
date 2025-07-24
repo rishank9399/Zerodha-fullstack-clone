@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: "Inter", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #424242;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link {
+  margin-left: 30px;
+  
+}
+
+.footer_links {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 400;
+}
+
+.footer_links:hover {
+  color: #387ed1;
+}
+
+#Support_hero {
+  background-color: #387ed1;
+  color: white;
+}
+
+.user-input::placeholder {
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
