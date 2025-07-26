@@ -58,43 +58,48 @@ const Signup = () => {
   };
 
   return (
-    <div className="form_container">
-      <h2>Signup Account</h2>
+    <div className="container mt-5 p-5 col-4 text-center">
+      <h2 className="fw-bold mb-5">Signup Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="fs-5 mt-3">Email&nbsp;</label>
           <input
             type="email"
             name="email"
             value={email}
+            className="p-2 border rounded"
             placeholder="Enter your email"
             onChange={handleOnChange}
           />
         </div>
         <div>
-          <label htmlFor="email">Username</label>
+          <label htmlFor="email" className="fs-5 mt-4">Username&nbsp;</label>
           <input
             type="text"
             name="username"
             value={username}
+            className="p-2 border rounded"
             placeholder="Enter your username"
             onChange={handleOnChange}
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="fs-5 mt-3">Password&nbsp;</label>
           <input
             type="password"
             name="password"
             value={password}
+            className="p-2 border rounded"
             placeholder="Enter your password"
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit">Submit</button>
-        <span>
-          Already have an account? <Link to={"/login"}>Login</Link>
-        </span>
+        <div className="d-flex justify-content-center mt-4">
+          <button type="submit" className="btn btn-primary" style={{width: "80%"}}>Submit</button>
+        </div>
+        <div className="text-muted mt-2 text-end mt-4">
+          <i>Already have an account? <Link to={"/login"}>Login</Link></i>
+        </div>
       </form>
       <ToastContainer />
     </div>

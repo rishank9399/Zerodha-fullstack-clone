@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Hero() {
@@ -19,8 +19,7 @@ function Hero() {
           email,
         }
       );
-      let success = data.exist; //"true" or "false"
-      console.log(success);
+      let success = data.exist;
       if (success) {
         navigate("/login");
       } else {

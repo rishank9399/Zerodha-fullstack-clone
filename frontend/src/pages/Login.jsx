@@ -56,34 +56,39 @@ const Login = () => {
   };
 
   return (
-    <div className="form_container">
-      <h2>Login Account</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter your email"
-            onChange={handleOnChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={handleOnChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
-        <span>
-          Already have an account? <Link to={"/signup"}>Signup</Link>
-        </span>
-      </form>
+    <div className="container mt-5 p-5 col-4 text-center">
+      <h1 className="fw-bold mb-5">Login Account</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email" className="fs-5 mt-3">Email&nbsp;</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              className="p-2 border rounded"
+              placeholder="Enter your email"
+              onChange={handleOnChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="fs-5 mt-4">Password&nbsp;</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              className="p-2 border rounded"
+              placeholder="Enter your password"
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="d-flex justify-content-center mt-4">
+            <button type="submit" className="btn btn-primary" style={{width: "80%"}}>Submit</button>
+          </div>
+          
+          <div className="text-muted mt-2 text-end mt-4">
+            <i>Already have an account? <Link to={"/signup"} className="text-decoration-none">Signup</Link></i>
+          </div>
+        </form>
       <ToastContainer />
     </div>
   );
