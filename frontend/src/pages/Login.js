@@ -30,7 +30,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        `${process.env.REACT_APP_AUTH_BACKEND}/login`,
         {
           ...inputValue,
         },
@@ -40,7 +40,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:4002";
+          window.location.href = process.env.REACT_APP_DASHBOARD_URL;
         }, 500);
       } else {
         handleError(message);

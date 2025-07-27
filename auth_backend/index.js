@@ -5,8 +5,8 @@ const app = express();
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
-const { MONGO_URL, PORT } = process.env;
-
+const { MONGO_URL } = process.env;
+const PORT = process.env.PORT || 4000;
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:4001", "http://localhost:4002"], 
+    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL], 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

@@ -14,7 +14,7 @@ function Hero() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/verify",
+        `${process.env.REACT_APP_AUTH_BACKEND}/verify`,
         {
           email,
         }

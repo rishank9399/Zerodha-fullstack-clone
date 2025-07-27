@@ -15,10 +15,10 @@ const Home = () => {
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
-        window.location.href = "http://localhost:4001/open-account";
+        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
       }
       const { data } = await axios.post( 
-        "http://localhost:4000/home", 
+        process.env.REACT_APP_AUTH_BACKEND, 
         {},
         { withCredentials: true }
       );
@@ -27,7 +27,7 @@ const Home = () => {
 
       if (!status) {
         removeCookie("token");
-        window.location.href = "http://localhost:4001/open-account";
+        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
         return;
       }
       if (!greetedRef.current) {
@@ -39,7 +39,7 @@ const Home = () => {
   }, [cookies, navigate, removeCookie]);
   const Logout = () => {
     removeCookie("token");
-    window.location.href = "http://localhost:4001/open-account"; 
+    window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`; 
   };
   return (
     <>
