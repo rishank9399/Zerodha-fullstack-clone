@@ -18,7 +18,7 @@ const Home = () => {
         window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
       }
       const { data } = await axios.post( 
-        process.env.REACT_APP_AUTH_BACKEND, 
+        `${process.env.REACT_APP_AUTH_BACKEND}/home`,
         {},
         { withCredentials: true }
       );
