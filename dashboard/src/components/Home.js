@@ -11,35 +11,35 @@ const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
-    const greetedRef = useRef(false);
+  const greetedRef = useRef(false);
+  console.log(cookies);
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
-        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
-      }
-      const { data } = await axios.post( 
-        `${process.env.REACT_APP_AUTH_BACKEND}/home`,
-        {},
-        { withCredentials: true }
-      );
-      const { status, user } = data;
-      setUsername(user);
-
-      if (!status) {
-        removeCookie("token");
-        window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
-        return;
-      }
-      if (!greetedRef.current) {
-          greetedRef.current = true;
-          toast.success(`Hello ${user}`, { position: "top-right" });
-        } 
-    }; 
+      // if (!cookies.token) {
+      //   window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
+      // }
+      // const { data } = await axios.post(
+      //   `${process.env.REACT_APP_AUTH_BACKEND}/home`,
+      //   {},
+      //   { withCredentials: true }
+      // );
+      // const { status, user } = data;
+      // setUsername(user);
+      // if (!status) {
+      //   removeCookie("token");
+      //   window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
+      //   return;
+      // }
+      // if (!greetedRef.current) {
+      //     greetedRef.current = true;
+      //     toast.success(`Hello ${user}`, { position: "top-right" });
+      // }
+    };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
   const Logout = () => {
     removeCookie("token");
-    window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`; 
+    window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
   };
   return (
     <>

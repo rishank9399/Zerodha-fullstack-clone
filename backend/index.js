@@ -10,8 +10,14 @@ const { PositionsModel } = require("./models/PositionsModel");
 const { OrdersModel } = require("./models/OrdersModel");
 
 const app = express();
-
-app.use(cors()); 
+ 
+  app.use(
+    cors({
+      origin: [process.env.DASHBOARD_URL], 
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8080;

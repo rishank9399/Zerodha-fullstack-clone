@@ -73,7 +73,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="username" className="fs-5 mt-4">Username&nbsp;</label>
+          <label htmlFor="email" className="fs-5 mt-4">Username&nbsp;</label>
           <input
             type="text"
             name="username"
