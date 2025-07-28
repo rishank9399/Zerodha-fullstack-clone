@@ -7,7 +7,7 @@ const Holdings = () => {
   const [holdings, setHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get(`${REACT_APP_BACKEND_URL}/allHoldings`).then((res) => {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`).then((res) => {
       setHoldings(res.data);
     });
   }, []);

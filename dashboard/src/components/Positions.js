@@ -6,7 +6,7 @@ const Positions = () => {
   const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    axios.get(`${REACT_APP_BACKEND_URL}/allPositions`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allPositions`)
       .then((res) => {
         setPositions(res.data);
       })
