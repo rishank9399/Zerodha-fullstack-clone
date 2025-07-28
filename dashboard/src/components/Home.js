@@ -15,9 +15,10 @@ const Home = () => {
   console.log(cookies);
   useEffect(() => {
     const verifyCookie = async () => {
-      // if (!cookies.token) {
-      //   window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
-      // }
+      if (!cookies.token) {
+        // window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/open-account`;
+        console.log("No Cookies...");
+      }
       // const { data } = await axios.post(
       //   `${process.env.REACT_APP_AUTH_BACKEND}/home`,
       //   {},
